@@ -73,30 +73,31 @@ namespace ARIMA.timeseries
         // a demo of the ARIMA model
         public void demo()
         {
-            string[] files = new string[] { "../../data/consumption.csv",
+            string[] files = new string[] {
                 "../../data/MSFT.csv",
                 "../../data/mean-daily-saugeen-river-flows.csv",
                 "../../data/dailymintempmelbourne.csv"};
-            string[] xattrs = new string[] { "Voltage", "Open", "saugeenRiverflows", "Dailymintemp" };
+            string[] xattrs = new string[] { "Voltage", "Open", "saugeenRiverflows", "Dailymintemp","Volume" };
             char[] delimiters = new char[] { '/', '-' };
+            string output = "../../data/predicted/";
             Stopwatch watch = new Stopwatch();
             watch.Start();
-            forecasttest(files[0], "C:/Users/Steffani/Desktop/" + xattrs[0] + ".csv", xattrs[0], delimiters[0], true, false, 0.01, 0.001, false, 0.05, false);
+            forecasttest(files[0], output + xattrs[0] + ".csv", xattrs[4], delimiters[1], false, true, 5000, 20, true, 0.05, false);
             watch.Stop();
             Console.WriteLine("First dataset took: " + watch.Elapsed.TotalSeconds.ToString());
             watch = new Stopwatch();
             watch.Start();
-            forecasttest(files[1], "C:/Users/Steffani/Desktop/" + xattrs[1] + ".csv", xattrs[1], delimiters[1], false, true, 0.9, 0.1, true, 0.05, false);
+            forecasttest(files[0], output + xattrs[1] + ".csv", xattrs[1], delimiters[1], false, true, 0.9, 0.1, true, 0.05, false);
             watch.Stop();
             Console.WriteLine("Second dataset took: " + watch.Elapsed.TotalSeconds.ToString());
             watch = new Stopwatch();
             watch.Start();
-            forecasttest(files[2], "C:/Users/Steffani/Desktop/" + xattrs[2] + ".csv", xattrs[2], delimiters[1], false, true, 0.9, 0.1, false, 0.05, false);
+            forecasttest(files[1], output + xattrs[2] + ".csv", xattrs[2], delimiters[1], false, true, 0.9, 0.1, false, 0.05, false);
             watch.Stop();
             Console.WriteLine("Third dataset took: " + watch.Elapsed.TotalSeconds.ToString());
             watch = new Stopwatch();
             watch.Start();
-            forecasttest(files[3], "C:/Users/Steffani/Desktop/" + xattrs[3] + ".csv", xattrs[3], delimiters[1], false, true, 0.9, 0.1, false, 0.05, false);
+            forecasttest(files[2], output + xattrs[3] + ".csv", xattrs[3], delimiters[1], false, true, 0.9, 0.1, false, 0.05, false);
             watch.Stop();
             Console.WriteLine("Fourth dataset took: " + watch.Elapsed.TotalSeconds.ToString());
         }
