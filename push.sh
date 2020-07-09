@@ -20,7 +20,7 @@ currentBranch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 git add .
 timestamp=$(date +"%D %T")
 
-git commit -m "Power Energy Modeling: Branch $currentBranch ($timestamp)"
+git commit -m "ARIMA Time Series Modeling: Branch $currentBranch ($timestamp)"
 
 git push
 
