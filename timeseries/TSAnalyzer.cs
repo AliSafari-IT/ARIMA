@@ -81,22 +81,17 @@ namespace ARIMA.timeseries
             char[] delimiters = new char[] { '/', '-' };
             Stopwatch watch = new Stopwatch();
             watch.Start();
-            forecasttest(files[0], "C:/Users/Steffani/Desktop/" + xattrs[0] + ".csv", xattrs[0], delimiters[0], true, false, 0.01, 0.001, false, 0.05, false);
-            watch.Stop();
-            Console.WriteLine("First dataset took: " + watch.Elapsed.TotalSeconds.ToString());
-            watch = new Stopwatch();
-            watch.Start();
-            forecasttest(files[1], "C:/Users/Steffani/Desktop/" + xattrs[1] + ".csv", xattrs[1], delimiters[1], false, true, 0.9, 0.1, true, 0.05, false);
+            forecasttest(files[1], "../../data/output/" + xattrs[1] + ".csv", xattrs[1], delimiters[1], false, true, 0.9, 0.1, true, 0.05, false);
             watch.Stop();
             Console.WriteLine("Second dataset took: " + watch.Elapsed.TotalSeconds.ToString());
             watch = new Stopwatch();
             watch.Start();
-            forecasttest(files[2], "C:/Users/Steffani/Desktop/" + xattrs[2] + ".csv", xattrs[2], delimiters[1], false, true, 0.9, 0.1, false, 0.05, false);
+            forecasttest(files[2], "../../data/output/" + xattrs[2] + ".csv", xattrs[2], delimiters[1], false, true, 0.9, 0.1, false, 0.05, false);
             watch.Stop();
             Console.WriteLine("Third dataset took: " + watch.Elapsed.TotalSeconds.ToString());
             watch = new Stopwatch();
             watch.Start();
-            forecasttest(files[3], "C:/Users/Steffani/Desktop/" + xattrs[3] + ".csv", xattrs[3], delimiters[1], false, true, 0.9, 0.1, false, 0.05, false);
+            forecasttest(files[3], "../../data/output/" + xattrs[3] + ".csv", xattrs[3], delimiters[1], false, true, 0.9, 0.1, false, 0.05, false);
             watch.Stop();
             Console.WriteLine("Fourth dataset took: " + watch.Elapsed.TotalSeconds.ToString());
         }
